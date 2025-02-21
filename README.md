@@ -129,15 +129,3 @@ class RegisterController extends Controller
         return response()->json(['message' => 'Utilizator înregistrat cu succes!'], 201);
     }
 }
-
-# Protecția Datelor Împotriva Atacurilor XSS la Afișarea în Vizualizare în Laravel
-
-## Ce este un atac XSS?
-
-Un atac XSS (Cross-Site Scripting) este un tip de atac în care un atacator injectează cod JavaScript malițios într-o pagină web vizibilă pentru utilizatorii finali. Acest cod poate fi folosit pentru a fura informații sensibile, cum ar fi cookie-uri, sau pentru a manipula comportamentul paginii web.
-
-Atacurile XSS pot avea loc atunci când datele externe (de exemplu, datele introduse de utilizatori) sunt afișate pe o pagină fără a fi corect sanitizate și validate.
-
-## Cum protejează Laravel împotriva atacurilor XSS?
-
-Laravel protejează automat aplicațiile de atacurile XSS prin intermediul mecanismului de **escape a datelor**. Atunci când afișezi date în vizualizări, Laravel folosește metoda `{{ }}` pentru a "escapa" (adica pentru a transforma) datele înainte de a le trimite către browser, prevenind astfel injectarea de cod JavaScript malițios.
